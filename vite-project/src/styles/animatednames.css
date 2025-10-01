@@ -1,0 +1,34 @@
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #f8f8f1; /* matches your background */
+}
+
+.scroll-text {
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+  font-size: 3rem;
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px #7b7b7b; 
+  letter-spacing: 2px;
+}
+
+.scroll-text span {
+  padding-right: 2rem;
+}
+
+.scroll-text .star {
+  color: #6a8d38; /* green stars */
+  -webkit-text-stroke: 0; /* no stroke on stars */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,10 +1,10 @@
 :root {
-  --primary-colr: #f7d046;
-  --secondary-colr: #28a745; /* green */
-  --text-dak: #222;
-  --text-liht: #555;
-  --cad-bg: #fff;
-  --card-rdius: 16px;
+  --primary-colo: #f7d046;
+  --secondary-colo: #28a745;
+  --text-dar: #222;
+  --text-ligh: #555;
+  --card-b: #fff;
+  --card-radiu: 16px;
 }
 
 /* Section */
@@ -19,14 +19,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
-  max-width: 1200px;
+  max-width: 1500px;
   width: 100%;
 }
 
 /* Feature Card */
 .feature-card {
-  background: var(--cad-bg);
-  border-radius: var(--card-rdius);
+  background: var(--card-b);
+  border-radius: var(--card-radiu);
   padding: 30px 20px;
   text-align: left;
   box-shadow: 0 6px 15px rgba(0,0,0,0.05);
@@ -35,53 +35,76 @@
   transition: all 0.3s ease;
 }
 
-.feature-card:hover {
-  border-color: var(--secondary-colr);
-  transform: translateY(-5px);
+
+/* Header (icon + title side by side) */
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
 }
 
 /* Icon */
 .feature-icon {
-  background: var(--primary-colr);
-  color: var(--text-dark);
+  background: var(--primary-colo);
+  color: var(--text-dar);
   font-size: 1.8rem;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 
 /* Title */
 .feature-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-dak);
-  margin-bottom: 10px;
+  color: var(--text-dar);
+  margin-bottom: 0;
 }
 
 /* Text */
 .feature-text {
   font-size: 0.9rem;
-  color: var(--text-liht);
+  color: var(--text-ligh);
   margin-bottom: 20px;
   line-height: 1.5;
 }
 
-/* Arrow */
-.feature-arrow {
+/* Arrow Circle */
+.feature-arrow-circle {
   position: absolute;
-  bottom: 15px;
-  right: 20px;
-  font-size: 1.2rem;
-  color: #999;
+  bottom: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: box-shadow 0.3s;
+}
+
+/* Arrow Icon */
+.feature-arrow {
+  font-size: 2rem;
+  color: #222;
+  margin: 0;
   transition: color 0.3s;
 }
 
+.feature-card:hover .feature-arrow-circle {
+  box-shadow: 0 4px 16px rgba(40,167,69,0.15);
+}
+
 .feature-card:hover .feature-arrow {
-  color: var(--secondary-colr);
+  color: var(--secondary-colo);
 }
 
 /* Responsive */
@@ -93,3 +116,4 @@
     padding: 25px 18px;
   }
 }
+

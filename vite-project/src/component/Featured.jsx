@@ -35,10 +35,17 @@ const Features = () => {
       <div className="features-container">
         {features.map((item) => (
           <div key={item.id} className="feature-card">
-            <div className="feature-icon">{item.icon}</div>
-            <h3 className="feature-title">{item.title}</h3>
+            <div className="feature-header">
+              <div className="feature-icon">{item.icon}</div>
+              <h3 className="feature-title">{item.title}</h3>
+            </div>
             <p className="feature-text">{item.text}</p>
-            <div className="feature-arrow">↗</div>
+            {/* Arrow in circular container */}
+            <div className="aroow-container">
+              <div className="feature-arrow-circle">
+                <span className="feature-arrow">↗</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>

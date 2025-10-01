@@ -170,7 +170,7 @@ html, body {
 
 .hero-subtitle {
   display: inline-block;
-  padding: 2px 15px;
+  padding: 4px 15px;
   border-radius: 15px;
   border: 1px solid #f1f1f1;
   margin-bottom: 2rem;
@@ -184,7 +184,7 @@ html, body {
 
 .hero-title {
   font-size: 4rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 3px;
   max-width: 700px;
   line-height: 1.1;
@@ -238,3 +238,4 @@ html, body {
   .hero-title { font-size: 2rem; }
   .hero-text { font-size: 0.9rem; margin-bottom: 1rem; }
 }
+
