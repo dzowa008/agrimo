@@ -1,0 +1,24 @@
+/* Styling to match the uploaded image's pale yellow/gold theme */
+
+/* Adjusted size to 60px for better visual balance with the text */
+.icon-wrapper {
+  width: 60px; /* Size of the circle */
+  height: 60px; /* Size of the circle */
+  border-radius: 50%; /* Makes it a circle */
+  /* Pale yellow background color from image */
+  background-color: #fce8a9; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; 
+}
+
+
+/* Adjusted size to 26px for better visual balance with the text */
+.category-icon {
+  font-size: 26px; /* Size of the icon itself */
+  /* Darker gold color from image */
+  color: #db9c0a; 
+}
+
+/* Removed previous media query as the layout is now handled by flex-row-reverse */

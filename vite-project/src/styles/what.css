@@ -1,0 +1,189 @@
+/*
+ * 1. Container Styles (The old gallery styles are removed as they are irrelevant)
+ */
+.farm-section-container {
+  display: flex;
+  flex-wrap: wrap; 
+  border-radius: 15px; 
+  max-width: 1100px;
+  margin: 50px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: none; 
+}
+
+.farm-col {
+  flex: 1 1 50%; 
+  min-height: 450px; 
+}
+
+.farm-image-col {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  /* Apply radius only to the left corners */
+  border-radius: 15px 0 0 15px;
+}
+
+.farm-content-col {
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  
+  /* CORRECTED Radius: Apply radius only to the right corners */
+  border-radius: 0 15px 15px 0; 
+  
+  /* NEW: Use multiple background layers: Image first, then the solid yellow color */
+  background-image: url('../src/assets/41e72d508dbe3529a5075a33b856453c8849a64c.png'), none;
+  background-position: center 80%; /* Adjust position of the new image */
+  background-size: 80% auto; /* Adjust size of the new image */
+  background-repeat: no-repeat;
+  
+  /* SECOND LAYER: The yellow color is set via background-color */
+  background-color: #f1ec45; 
+}
+
+/* Subtle background farm icon - Now hidden by the new image, but we'll keep it as a fallback */
+.farm-content-col::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px; 
+  width: 150px;
+  height: 150px;
+  background-image: url('../src/assets/farm-icon-grey.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 1;
+  transform: rotate(-15deg);
+}
+
+/*
+ * 2. Text and Stat Styles (Unchanged)
+ */
+.farm-subheading {
+  font-size: 1.1em;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.farm-subheading .arrow-icon {
+  font-size: 0.8em;
+  margin-right: 8px;
+  color: #333;
+}
+
+.farm-heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.farm-description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 30px;
+  z-index: 2;
+}
+
+.farm-stats {
+  display: flex;
+  gap: 30px;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.farm-stat-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.farm-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+.farm-percentage {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #333;
+  background-color: white;
+  padding: 10px 0;
+  border-radius: 40px;
+  border: 5px solid white;
+}
+
+.farm-stat-text {
+  font-size: 0.9em;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/*
+ * 3. Responsiveness
+ */
+@media (max-width: 768px) {
+  .farm-col {
+    flex: 1 1 100%; 
+    min-height: 300px;
+  }
+  
+  .farm-image-col {
+    border-radius: 15px 15px 0 0; 
+  }
+  .farm-content-col {
+    border-radius: 0 0 15px 15px; 
+    padding: 30px;
+    background-color: #f1ec45;
+    background-image: none; /* Remove background image on mobile */
+  }
+
+  .farm-heading {
+    font-size: 2em;
+  }
+
+  .farm-stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .farm-content-col::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .farm-section-container {
+    margin: 30px auto;
+  }
+  .farm-content-col {
+    padding: 20px;
+  }
+}

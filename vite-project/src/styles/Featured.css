@@ -72,6 +72,8 @@
   color: var(--text-ligh);
   margin-bottom: 20px;
   line-height: 1.5;
+  border-top: 0.5px solid #bebebe;
+  padding-top: 15px
 }
 
 /* Arrow Circle */

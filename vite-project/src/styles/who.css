@@ -1,24 +1,30 @@
 .who-we-are-section {
     border-radius: 12px;
     font-family: Arial, sans-serif;
-    /* margin-left: 50px; */
-    height: 80vh;
+    min-height: 80vh;
     background: #fafaf6;
+    padding: 20px 0;
 }
 
 .container {
-    width: 100vw;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
 }
 
 .col-md-6 {
     width: 50%;
+    position: relative;
 }
 
 .align-items-center {
     display: flex;
+    align-items: center;
     gap: 50px;
-    padding: 10px 50px; 
+    padding: 10px 0;
+    width: 100%;
 }
 
 .main-img {
@@ -29,11 +35,11 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Overlay card (no z-index needed) */
 .stat-card.highlight {
-    position: relative;
-    bottom: 150px;
-    left: 54%;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    left: 52%;
     background: #E7E35F;
     padding: 20px 25px;
     border-radius: 16px;
@@ -45,6 +51,7 @@
     align-items: center;
     align-content: center;
     border: 30px solid #fafaf6;
+    z-index: 10;
 }
 
 .stat-card.highlight h3 {
@@ -117,4 +124,5 @@
 .smarta {
     margin-top: 50px;
     display: flex;
+    gap: 30px;
 }

@@ -1,0 +1,85 @@
+/*
+ * 1. Container Styles
+ */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensures all images align nicely based on their center point */
+  gap: 20px;
+  padding: 40px;
+  background-color: #fcfbf5;
+}
+
+/*
+ * 2. General Image Styles & Animations
+ */
+.gallery-image {
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  image-rendering: -webkit-optimize-contrast;
+
+  /* Animation Properties */
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Animation: Slightly scale up and add a subtle shadow */
+.gallery-image:hover {
+  transform: scale(1.05); /* Scales up the image by 5% */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adds a soft shadow */
+}
+
+/*
+ * 3. Specific Image Dimensions (Focused on the Middle Two)
+ */
+
+/* First Image (Edge): Smaller/Standard size */
+.gallery-image.large {
+  width: 200px; /* Smaller than before */
+  height: 200px;
+}
+
+/* Second Image (Middle): Increased size */
+.gallery-image.medium {
+  width: 250px; /* Increased width */
+  height: 240px; /* Increased height */
+}
+
+/* Third Image (Middle): Increased size, maintaining focus */
+.gallery-image.small {
+  width: 250px; /* Increased width, now matching the second image */
+  height: 240px; /* Increased height, now matching the second image */
+}
+
+/* Fourth Image (Edge): Smaller/Standard size */
+.gallery-image.large-right {
+  width: 200px; /* Smaller than before */
+  height: 200px;
+}
+
+
+/*
+ * 4. Responsiveness
+ */
+@media (max-width: 768px) {
+  .gallery-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .gallery-image {
+    width: 90% !important;
+    height: auto;
+  }
+
+  /* Disable hover scale on mobile for better touch experience */
+  .gallery-image:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
