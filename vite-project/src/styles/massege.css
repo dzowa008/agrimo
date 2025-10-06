@@ -1,0 +1,41 @@
+.msg-conta{
+    margin: 10px 100px;
+    background-color: white;
+    padding: 50px;
+    border-radius: 30px;   
+}
+.msg-conta h1{
+    margin-bottom: 20px;
+}
+
+.main-c{
+    display: flex;
+    gap: 50px;
+}
+.main{
+    height: 200px;
+    width: 100%;
+    border: 1px solid rgb(75, 75, 75);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.active{
+    width: 100%;
+    border: 1px solid  rgb(75, 75, 75);
+    height: 50px;
+    border-radius: 10px;
+}
+.active p{
+    font-size: 15px;
+    padding: 11px 11px 0 20px;
+    color: grey;
+}
+.hoyo{
+    background-color: rgb(45, 131, 52);
+    color: white;
+    width: 200px;
+    height: 70px;
+    margin-left: 10px;
+    border-radius: 60px;
+    border: none;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Hero.css";
 import logo from "../assets/logo-white.svg.png";
 import { FaPhoneAlt, FaSearch } from "react-icons/fa"; // ✅ added imports
-import '../index.css';
+// import './index.css';
 
 const Hero = () => {
     const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);

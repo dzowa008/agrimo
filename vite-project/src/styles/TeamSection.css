@@ -1,0 +1,64 @@
+/* Custom background color matching the image's overall container */
+.team-section-bg {
+  background-color: #f8f7f2; /* Light beige/off-white background */
+}
+
+/* Main profile container */
+.team-profile-div {
+  background-color: transparent;
+  /* Adjusting for alignment within the grid column */
+}
+
+/* Container for the image, necessary for relative positioning of the icon */
+.image-container-div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Rounded corners for the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the image */
+}
+
+/* Image styling */
+.team-image-div {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Positioning and styling for the share/arrow icon overlay */
+.share-icon-div {
+  position: absolute;
+  bottom: 15px; /* Distance from the bottom */
+  right: 15px; /* Distance from the right */
+  width: 35px;
+  height: 35px;
+  background-color: #f7d047; /* Yellow/Gold color */
+  border-radius: 50%; /* Makes it a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Styling for the text content container */
+.text-content-div {
+    text-align: left; /* Aligns text left as seen in the image */
+}
+
+/* Title (e.g., CEO OWNER) styling */
+.team-title-div {
+  font-size: 0.75rem; /* Smaller text */
+  font-weight: 600; /* Bold */
+  color: #559900; /* Green color for the title */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 5px; /* Spacing below image */
+}
+
+/* Name styling */
+.team-name-div {
+  font-size: 1.1rem; /* Slightly larger text */
+  font-weight: 700; /* Very bold */
+  color: #333; /* Dark text color */
+}

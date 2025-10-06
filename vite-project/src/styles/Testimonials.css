@@ -1,138 +1,104 @@
-.testimonials-section {
-  background-color: #f6f7f2;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
+/* 1. Global Section Styling */
+.team-section-container {
+  padding: 30px 0; /* Vertical padding around the entire section */
+  background-color: #f8f7f2; /* Light beige/off-white background */
 }
 
-.header-row {
+/* 2. Grid Layout (using Flexbox for arrangement) */
+.team-members-grid {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3rem;
-  padding: 0 15px; /* Add some padding to match container */
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: center; /* Centers the cards horizontally */
+  max-width: 1200px; /* Maximum width for the content area, matching the image */
+  margin: 0 auto; /* Centers the content area itself */
+  padding: 0 15px; /* Horizontal padding for smaller screens */
 }
 
-.testimonial-subtitle {
-    background-color: white;
-  font-size: 14px;
-  font-weight: 600;
-  color: black; /* Light green subtitle color */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 5px 10px;
-  /* border: 1px solid #e0e0e0; */
-  display: inline-block;
-  border-radius: 15px;
-  margin-bottom: 0.5rem;
+/* 3. Individual Card Styling */
+.team-card {
+  /* Calculate width for 4 cards per row with margin */
+  /* (100% / 4) = 25%. Subtract margin to prevent overflow. */
+  width: calc(25% - 30px); /* 25% for width, minus 15px margin on each side (total 30px) */
+  margin: 15px; /* Margin around each card for spacing between them and rows */
+  background-color: transparent; /* No background for the card itself */
 }
 
-.testimonial-title {
-  font-size: 40px;
-  font-weight: 700;
-  color: #343a40;
-}
+/* 4. Responsive Design (Media Queries) */
 
-.navigation-buttons {
-  display: flex;
-}
-
-.nav-btn {
-  background-color: transparent;
-  border: 1px solid #dcdcdc;
-  color: #343a40;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  line-height: 50px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-left: 10px;
-}
-
-.nav-btn:hover {
-  background-color: #799a63;
-  color: white;
-  border-color: #799a63;
-}
-
-.testimonial-card {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  position: relative;
-  height: 100%; /* Ensures cards have equal height in the grid */
-}
-
-.quote-icon-container {
-  position: absolute;
-  top: -15px;
-  right: 15px;
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 1;
-  color: #f7e09f; /* Light yellow/gold color */
-  z-index: 10;
-}
-
-.rating-stars {
-  margin-bottom: 15px;
-}
-
-.star-icon {
-  color: gold; /* Classic gold color for stars */
-  font-size: 18px;
-  margin-right: 2px;
-}
-
-.testimonial-quote {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.client-info {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.client-image-wrapper {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 15px;
-  flex-shrink: 0;
-}
-
-.client-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.client-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: #343a40;
-  margin-bottom: 0;
-}
-
-.client-title {
-  font-size: 13px;
-  color: #343a40;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .testimonial-title {
-    font-size: 32px;
+/* Tablets (approx. 768px to 992px) - 2 cards per row */
+@media (max-width: 992px) {
+  .team-card {
+    width: calc(50% - 30px); /* 2 cards per row */
   }
+}
+
+/* Mobile Phones (approx. up to 576px) - 1 card per row */
+@media (max-width: 576px) {
+  .team-card {
+    width: 100%; /* Full width for single column layout */
+    max-width: 300px; /* Optional: cap width on very large phones for readability */
+    margin-left: auto; /* Center individual cards on mobile */
+    margin-right: auto;
+  }
+}
+
+/* 5. Image and Icon Styling */
+
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensures anything outside the rounded corners is clipped */
+  border-radius: 8px; /* Rounded corners for the image container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the image */
+}
+
+.team-image {
+  width: 100%; /* Image fills its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Removes extra space below image */
+  border-radius: 8px; /* Apply rounded corners directly to the image */
+}
+
+/* Positioning and styling for the yellow circle icon */
+.share-icon {
+  position: absolute;
+  bottom: 15px; /* Distance from the bottom edge of the image */
+  right: 15px; /* Distance from the right edge of the image */
+  width: 35px;
+  height: 35px;
+  background-color: #f7d047; /* Yellow/Gold color as in the image */
+  border-radius: 50%; /* Makes it a perfect circle */
+  display: flex;
+  justify-content: center; /* Centers the SVG horizontally */
+  align-items: center; /* Centers the SVG vertically */
+  cursor: pointer;
+  z-index: 10; /* Ensures the icon is above the image */
+}
+
+.share-icon svg {
+  color: #000; /* Color of the SVG icon */
+  width: 15px;
+  height: 15px;
+}
+
+/* 6. Text Content Styling */
+.text-content {
+  text-align: left; /* Align text left as per the image */
+  padding-top: 10px; /* Space between image and text */
+}
+
+.team-title {
+  font-size: 0.75rem; /* Smaller text size for the title */
+  font-weight: 600; /* Semi-bold */
+  color: #559900; /* Green color for the title */
+  text-transform: uppercase; /* All caps */
+  letter-spacing: 0.5px; /* Slight letter spacing */
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.team-name {
+  font-size: 1.1rem; /* Larger text size for the name */
+  font-weight: 700; /* Bold */
+  color: #333; /* Dark gray color for the name */
+  margin-top: 2px; /* Small space between title and name */
+  margin-bottom: 0; /* Remove default margin */
 }

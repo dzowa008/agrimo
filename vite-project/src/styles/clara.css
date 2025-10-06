@@ -1,0 +1,366 @@
+/* --- CSS VARIABLES --- */
+:root {
+  --primary-green: #4a7538; /* Main deep green color */
+  --light-green-bg: #f9faf5; /* Very light, off-white background color */
+  --text-color: #333;
+  --light-text-color: #6a6a6a;
+  --resume-content-width: 100vw; /* Max width for the inner content cards */
+  --spacing-lg: 30px;
+  --spacing-md: 15px;
+}
+
+/* --- GLOBAL LAYOUT & CONTAINER ADJUSTMENTS --- */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    background-color: #f7f7f7; /* Light background for the page body */
+    width: 100vw;
+}
+
+.resume-container {
+  font-family: Arial, sans-serif;
+  
+  /* --- FORCED DIMENSIONS --- */
+  width: 100vw !important; /* Forces Full Viewport Width */
+  padding: 70px !important; /* Forces 70px padding on all sides */
+  box-sizing: border-box !important; /* Crucial: padding is included in the 100vw width */
+  
+  /* Resetting visual styles */
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0; 
+  margin: 0; 
+  overflow: hidden; 
+}
+
+/* --- HEADER SECTION (The Top Card, Centered) --- */
+.header-section {
+  display: flex;
+  background-color: var(--light-green-bg);
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--spacing-lg);
+  max-width: var(--resume-content-width); 
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.header-image-wrapper {
+  flex-basis: 45%;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  /* clip-path: polygon(0 0, 95% 0, 80% 100%, 0% 100%); */
+}
+
+.profile-photo {
+  width: 100%;
+  height: fit-content;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.header-info {
+  flex-grow: 1;
+  padding: 30px 40px;
+  background-color: var(--light-green-bg);
+  position: relative;
+  overflow: hidden;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250"><path fill="none" stroke="%234a7538" stroke-opacity="0.2" stroke-width="2" d="M100 250 L100 150 L200 150 L200 250 M150 150 L150 100 L250 100 L250 150 M300 250 L300 150 L400 150 L400 250 M150 100 L250 100 L300 150 Z" transform="scale(1.5, 1.5) translate(100, 30)" /></svg>');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 50% auto;
+}
+
+.job-title-pill {
+  color: var(--primary-green);
+  font-size: 0.8em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.job-title-pill .dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.name {
+  font-size: 2.2em;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.headline {
+  font-size: 0.9em;
+  color: var(--light-text-color);
+  margin-bottom: 25px;
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 8px 15px;
+  margin-bottom: 25px;
+  font-size: 0.9em;
+  z-index: 1;
+  position: relative;
+}
+
+.contact-details .label {
+  font-weight: bold;
+  color: var(--light-text-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #fff;
+  /* Ensure the SVG icon inside is correctly centered and sized */
+  & > svg {
+      font-size: 1.1em;
+  }
+}
+
+
+/* --- MAIN CONTENT WRAPPER (The Bottom Card, Centered) --- */
+.main-content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+  max-width: var(--resume-content-width);
+  margin: 0 auto;
+}
+
+.personal-info-section {
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid #eee;
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--text-color);
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.first-letter {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--primary-green);
+  margin-right: 3px;
+}
+
+.highlight {
+  color: var(--primary-green);
+  font-weight: bold;
+}
+
+/* --- PROFESSIONAL SKILLS & AWARDS SECTION --- */
+.skills-and-awards-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 40px;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid #eee;
+}
+
+.professional-skills-section .section-title,
+.awards-honors-section .section-title {
+    color: var(--text-color);
+    font-size: 1.4em;
+}
+
+/* --- SKILLS (Circular Progress Bars) --- */
+.skills-chart {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.skill-item {
+  flex-basis: 25%;
+  max-width: 100px;
+}
+
+.skill-label {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.progress-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-text {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--primary-green);
+  font-size: 1.1em;
+  z-index: 2;
+}
+
+/* Conic Gradients for specific percentages */
+.p75 {
+  background: conic-gradient(var(--primary-green) 0% 75%, var(--light-green-bg) 75% 100%);
+}
+.p80 {
+  background: conic-gradient(var(--primary-green) 0% 80%, var(--light-green-bg) 80% 100%);
+}
+.p90 {
+  background: conic-gradient(var(--primary-green) 0% 90%, var(--light-green-bg) 90% 100%);
+}
+
+/* --- AWARDS & HONORS --- */
+.awards-honors-section {
+    background-color: var(--light-green-bg);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+}
+
+.award-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.award-item {
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 0.9em;
+  border-left: 5px solid var(--primary-green);
+}
+
+.award-year {
+  font-weight: bold;
+  color: var(--primary-green);
+  margin-right: 5px;
+}
+.award-name {
+    color: var(--text-color);
+}
+
+/* --- EVERYTHING ON OUR FARM IS GROWN SECTION --- */
+.farm-growth-section {
+    padding-top: var(--spacing-lg);
+    padding-bottom: 0;
+}
+
+.farm-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.farm-list li {
+  font-size: 0.9em;
+  color: var(--light-text-color);
+  line-height: 1.5;
+  /* display: flex;
+  align-items: flex-start; */
+}
+
+.bullet-icon {
+  font-size: 1.2em;
+  margin-right: 8px;
+  color: white;
+  flex-shrink: 0;
+  background-color: rgb(167, 153, 30);
+  width: 25px;
+  padding :2px;
+  border-radius: 40px;
+}
+
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1050px) {
+    .resume-container {
+        padding: 30px !important;
+    }
+    .header-section, .main-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .header-image-wrapper {
+    width: 100%;
+    height: 300px;
+    clip-path: none;
+    border-radius: 8px 8px 0 0;
+  }
+  .header-info {
+    border-radius: 0 0 8px 8px;
+  }
+  .skills-and-awards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .skills-chart {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .farm-list {
+    grid-template-columns: 1fr;
+  }
+}

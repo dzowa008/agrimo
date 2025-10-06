@@ -1,0 +1,81 @@
+/* AgriculturalBanner.css */
+
+.agricultural-banner-container {
+  position: relative;
+  width: 100%; /* Or a fixed width like 800px */
+  max-width: 85vw;
+  margin: 5% 100px;
+  height: 150px; /* Adjust as needed */
+  border-radius: 15px; /* Rounded corners for the entire banner */
+  overflow: hidden; /* Ensures the image and overlay stay within rounded corners */
+  background-image: url('../src/assets/6ac5b4dbd5aad3b155da75cbafefdeb1083363eb.png'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.agricultural-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+  display: flex;
+  align-items: center;
+  padding: 0 40px; /* Padding for the content inside the overlay */
+}
+
+.agricultural-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between icon, text, and button */
+  color: white; /* Text color */
+}
+
+.agricultural-banner-icon {
+  background-color: #fdd835; /* Yellow background for the icon circle */
+  border-radius: 50%; /* Makes it a circle */
+  width: 80px; /* Size of the icon circle */
+  height: 80px; /* Size of the icon circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px; /* Adjust icon size */
+  color: #556b2f; /* Dark green icon color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.agricultural-banner-text p {
+  margin: 0; /* Remove default paragraph margin */
+  font-size: 1.6em; /* Adjust font size */
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.agricultural-banner-button {
+  background-color: white;
+  color: #556b2f; /* Dark green text for the button */
+  border: none;
+  border-radius: 25px; /* More rounded button */
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  margin-left: 400px; /* Pushes the button to the right within the content */
+}
+
+.agricultural-banner-button:hover {
+  background-color: #e0e0e0;
+}
+
+.agricultural-banner-button span {
+  font-size: 1.2em;
+}

@@ -1,0 +1,189 @@
+/* BlogStyles.css (Revised) */
+
+/* Base Styles */
+.blog-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: Arial, sans-serif;
+    margin-top: 40px !important;
+    /* The padding left/right will be handled by the .container modification below */
+}
+
+/* *** CRITICAL CHANGE FOR 100vw & PADDING ***
+   We override the default Bootstrap .container (which sets max-width)
+   to ensure it takes up the full viewport width and applies the required padding.
+*/
+.blog-section.container {
+    width: 100vw;
+    max-width: none; /* Remove Bootstrap's max-width limitation */
+    padding-left: 100px !important; 
+    padding-right: 100px !important;
+}
+
+/* Section Header Styles */
+.section-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    font-weight: 700; 
+    color: #333;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.section-header .sub-title {
+    font-size: 0.9em;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    width: 180px;
+    border-radius: 15px;
+}
+
+.section-header .sub-title::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #a0d9b4; /* Green dot */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Navigation Buttons (Arrows) */
+.navigation-buttons button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    color: #555;
+    font-size: 1.2em;
+    transition: all 0.2s;
+}
+
+.navigation-buttons button:hover {
+    background-color: #eee;
+    border-color: #999;
+}
+
+/* Custom Card Styles */
+.card-custom {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+    background-color: #fff;
+    height: 100%; 
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Image and Overlay Styles */
+.card-img-top-wrapper {
+    position: relative;
+    height: 200px; 
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card-img-top-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badge (e.g., FOOD CROPS) */
+.card-img-overlay-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Link Icon (Yellow Circle) */
+.card-link-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #ffcc00; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Card Body Content */
+.card-body-custom {
+    padding: 20px 20px 15px 20px;
+}
+
+.card-title-custom {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.card-title-custom:hover {
+    color: #a0d9b4; 
+}
+
+.card-meta {
+    font-size: 0.85em;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.card-meta span svg {
+    margin-right: 5px;
+    color: #a0d9b4; 
+    font-size: 1em;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 992px) {
+    .blog-section.container {
+        /* Reset padding for mobile to allow standard Bootstrap behavior or smaller padding */
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}

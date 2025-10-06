@@ -37,9 +37,9 @@ const testimonialData = [
 // Helper component for rating stars
 const RatingStars = ({ count }) => {
   return (
-    <div className="rating-stars">
+    <div className="testimonial-rating-stars">
       {[...Array(count)].map((_, i) => (
-        <FaStar key={i} className="star-icon" />
+        <FaStar key={i} className="testimonial-star-icon" />
       ))}
     </div>
   );
@@ -47,44 +47,44 @@ const RatingStars = ({ count }) => {
 
 // Placeholder component for the quote icon graphic
 const QuoteIcon = () => (
-    <span className="quote-icon-container">“</span>
+    <span className="testimonial-quote-icon-container">“</span>
 );
 
 
 const Testimonials = () => {
   return (
     <section className="testimonials-section">
-      <div className="container py-5">
-        <div className="header-row">
-          <div className="title-group">
+      <div className="testimonial-container"> {/* Renamed for specificity */}
+        <div className="testimonial-header-row"> {/* Renamed */}
+          <div className="testimonial-title-group"> {/* Renamed */}
             <p className="testimonial-subtitle">Testimonial</p>
             <h2 className="testimonial-title">What our customers say</h2>
           </div>
-          <div className="navigation-buttons">
-            <button className="nav-btn left">
+          <div className="testimonial-navigation-buttons"> {/* Renamed */}
+            <button className="testimonial-nav-btn testimonial-nav-btn-left"> {/* Renamed and added direction class */}
               &lt;
             </button>
-            <button className="nav-btn right">
+            <button className="testimonial-nav-btn testimonial-nav-btn-right"> {/* Renamed and added direction class */}
               &gt;
             </button>
           </div>
         </div>
 
-        <div className="row mt-4">
+        <div className="testimonial-cards-row"> {/* Renamed */}
           {testimonialData.map((t) => (
-            <div key={t.id} className="col-lg-4 col-md-6 mb-4">
+            <div key={t.id} className="testimonial-col"> {/* Renamed for specificity, replace Bootstrap col-lg-4, etc. */}
               <div className="testimonial-card">
                 <QuoteIcon />
                 <RatingStars count={t.rating} />
                 <p className="testimonial-quote">{t.quote}</p>
                 
-                <div className="client-info">
-                  <div className="client-image-wrapper">
-                    <img src={t.img} alt={t.name} className="client-img" />
+                <div className="testimonial-client-info">
+                  <div className="testimonial-client-image-wrapper">
+                    <img src={t.img} alt={t.name} className="testimonial-client-img" />
                   </div>
-                  <div className="client-details">
-                    <p className="client-name">{t.name}</p>
-                    <p className="client-title">{t.title}</p>
+                  <div className="testimonial-client-details">
+                    <p className="testimonial-client-name">{t.name}</p>
+                    <p className="testimonial-client-title">{t.title}</p>
                   </div>
                 </div>
               </div>

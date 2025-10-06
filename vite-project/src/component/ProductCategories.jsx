@@ -10,7 +10,7 @@ const ProductCategories = () => {
 
     return (
         // Changed min-height from 80vh to 95vh
-        <section className="d-flex align-items-center position-relative" style={{ backgroundColor: backgroundColor, minHeight: '95vh' }}>
+        <section className="d-flex align-items-center position-relative" style={{ backgroundColor: backgroundColor, minHeight: '95vh', width:'100vw'}}>
 
             {/* Container wrapper for content and vertical centering */}
             <div className="container py-4">

@@ -1,5 +1,7 @@
-.agriculture-section {
-  background-color: #4a8b42; /* green background */
+.agriculture-services {
+  /* Changed from .agriculture-section */
+  background-color: #4a8b42;
+  /* green background */
   padding: 60px 120px;
   font-family: Arial, sans-serif;
   color: white;
@@ -7,7 +9,9 @@
   position: relative;
   overflow: hidden;
 }
-.section-tag {
+
+.agriculture-services__tag {
+  /* Changed from .section-tag */
   display: inline-block;
   background: white;
   color: #333;
@@ -19,31 +23,36 @@
   width: fit-content;
 }
 
-.agriculture-header {
+.agriculture-services__header {
+  /* Changed from .agriculture-header */
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
 /* Title and buttons row */
-.full-cont {
+.agriculture-services__header-row {
+  /* Changed from .full-cont */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.section-title {
+.agriculture-services__title {
+  /* Changed from .section-title */
   font-size: 32px;
   font-weight: bold;
   margin: 0;
 }
 
-.nav-buttons {
+.agriculture-services__nav {
+  /* Changed from .nav-buttons */
   display: flex;
   gap: 10px;
 }
 
-.nav-btn {
+.agriculture-services__nav-btn {
+  /* Changed from .nav-btn */
   background: transparent;
   color: #ffffff;
   border: 1px solid white;
@@ -54,13 +63,15 @@
   transition: 0.3s;
 }
 
-.nav-btn:hover {
+.agriculture-services__nav-btn:hover {
+  /* Changed from .nav-btn:hover */
   background: white;
   color: #4a8b42;
 }
 
 /* Service cards grid */
-.services-grid {
+.agriculture-services__grid {
+  /* Changed from .services-grid */
   display: flex;
   gap: 30px;
   margin-top: 40px;
@@ -75,8 +86,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-  width: 350px;      
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  /* ** */
+  /* INCREASED CARD WIDTH */
   transition: transform 0.3s ease;
 }
 
@@ -85,7 +98,8 @@
 }
 
 /* Card image */
-.service-img {
+.service-card__image {
+  /* Changed from .service-img */
   width: 90%;
   height: 160px;
   object-fit: cover;
@@ -95,14 +109,16 @@
 }
 
 /* Card text */
-.service-content {
+.service-card__content {
+  /* Changed from .service-content */
   padding: 16px 18px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.service-category {
+.service-card__category {
+  /* Changed from .service-category */
   font-size: 12px;
   color: #666;
   text-transform: uppercase;
@@ -113,19 +129,24 @@
   font-weight: 500;
 }
 
-.service-category span {
-  font-size: 26px; /* smaller dot/icon */
-  color:#ffd700; /* green dot */
+.service-card__category span {
+  /* Changed from .service-category span */
+  font-size: 26px;
+  /* smaller dot/icon */
+  color: #ffd700;
+  /* green dot */
 }
 
-.service-title {
+.service-card__title {
+  /* Changed from .service-title */
   font-size: 18px;
   margin: 8px 0 4px 0;
   font-weight: bold;
   color: #222;
 }
 
-.service-desc {
+.service-card__description {
+  /* Changed from .service-desc */
   font-size: 13px;
   color: #555;
   border-top: 1px solid rgb(209, 209, 209);
@@ -136,13 +157,15 @@
 }
 
 /* Footer button */
-.card-footer {
+.service-card__footer {
+  /* Changed from .card-footer */
   display: flex;
   justify-content: flex-end;
   padding: 12px 18px;
 }
 
-.circle-btn {
+.service-card__action-btn {
+  /* Changed from .circle-btn */
   background: #f8e257;
   width: 36px;
   height: 36px;
@@ -156,30 +179,43 @@
   transition: 0.3s;
 }
 
-.circle-btn:hover {
+.service-card__action-btn:hover {
+  /* Changed from .circle-btn:hover */
   background: #ffd700;
 }
 
+/* Rotate the arrow icon to match the diagonal look in the image */
+.service-card__action-btn>svg {
+  /* Changed from .circle-btn > svg */
+  transform: rotate(-45deg);
+}
+
 /* Background decorative image */
-.bg-image {
+.agriculture-services__background {
+  /* Changed from .bg-image */
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 }
 
-.bg-image img {
+.agriculture-services__background img {
+  /* Changed from .bg-image img */
   width: 100%;
   /* opacity: 0.25; */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .agriculture-section {
+  .agriculture-services {
+    /* Changed from .agriculture-section */
     padding: 40px 20px;
   }
+
   .service-card {
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
+    
+    /* INCREASED MOBILE MAX WIDTH */
   }
 }

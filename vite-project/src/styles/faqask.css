@@ -1,0 +1,135 @@
+/* --- Custom Styles for FAQ Section --- */
+
+/* * Color Palette used to match the image:
+ * Green: #6DA268
+ * Background: #fcfbf9 (Very light off-white)
+ * Headings: #333333
+ * Subtitles/Body Text: #555555 to #6c757d
+*/
+.hoyoo{
+    background-color: white;
+    width: fit-content;
+    border-radius: 20px;
+}
+/* 1. Section and Main Layout */
+.faq-section {
+  background-color: #fcfbf9; /* Light, slightly off-white background */
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  font-family: 'Arial', sans-serif;
+  width: 100vw;
+}
+
+/* 2. Headings and Subtitles */
+.icon-badge {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #70B36E; /* Small green dot */
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.most-ask, .people-know {
+  font-size: 0.85rem;
+  color: #6c757d; /* Subtitle color */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+/* 3. Custom Accordion Item (The Card) */
+.custom-accordion-item {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Defined shadow */
+  margin-bottom: 1.25rem !important;
+  overflow: hidden; /* Ensures smooth border-radius */
+}
+
+/* Green Styling for the First Item in Each Column */
+.accordion#generalAccordion .custom-accordion-item:first-of-type,
+.accordion#otherAccordion .custom-accordion-item:first-of-type {
+  background-color: #6DA268; /* Solid green background */
+  color: #ffffff; /* White text */
+}
+
+/* 4. Custom Accordion Button (The Question Header) */
+.custom-accordion-button {
+  background-color: transparent;
+  color: inherit; /* Inherit white for green item, black for white item */
+  font-weight: 700; /* Bold question text */
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none;
+  box-shadow: none !important;
+}
+
+.custom-accordion-button:not(.collapsed) {
+  /* Maintain the look when open (no extra background change) */
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Overriding Bootstrap's default chevron icon */
+.custom-accordion-button::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  margin-left: auto; /* Push arrow to the right */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Dark arrow */
+  transform: rotate(0deg); /* Arrow points down when open */
+  transition: transform 0.2s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.custom-accordion-button.collapsed::after {
+  transform: rotate(-90deg); /* Arrow points right when collapsed */
+}
+
+/* Make arrow WHITE for the Green Item */
+.accordion#generalAccordion .custom-accordion-item:first-of-type .custom-accordion-button::after,
+.accordion#otherAccordion .custom-accordion-item:first-of-type .custom-accordion-button::after {
+    filter: invert(1); /* Inverts the dark arrow to white */
+}
+
+/* Question Number Styling */
+.question-number {
+  margin-right: 1.25rem;
+  font-size: 1.2rem;
+  min-width: 45px; /* Consistent spacing */
+  font-weight: 700;
+}
+
+/* 5. Custom Accordion Body (The Answer) */
+.custom-accordion-body {
+  padding: 1.5rem;
+  color: #555555; /* Dark grey text for the answer */
+  background-color: #ffffff; /* White background for the body by default */
+  border-radius: 0 0 8px 8px;
+  line-height: 1.6;
+  font-weight: 400; /* Lighter font weight for the body text */
+}
+
+/* Body for the First (Green) Item - Use light grey to contrast with the green header */
+.accordion#generalAccordion .custom-accordion-item:first-of-type .custom-accordion-body,
+.accordion#otherAccordion .custom-accordion-item:first-of-type .custom-accordion-body {
+    background-color: #f8f8f8; /* Light grey/off-white for the open answer */
+    color: #555555;
+}
+
+/* Ensure no border around the open content area */
+.accordion-collapse.collapse.show {
+    border: none;
+}

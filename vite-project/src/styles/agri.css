@@ -1,0 +1,196 @@
+/*
+  CSS for AgricultureSmarta component (agri.css) - PURE CSS FLEXBOX & ALIGNMENT FIXES
+  Focus: Fixing background image URL and ensuring precise alignment.
+*/
+
+/* Keyframe for Pulse Effect (Included for completeness if you use the animations) */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+}
+
+/* Keyframe for Slide-Up Fade-In Effect (Included for completeness) */
+@keyframes slideUpFadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Base Layout & Container --- */
+
+.agriculture-section {
+  background-color: #4CAF50; 
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+  min-width: 100%;
+}
+
+.agri-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Subtle Wheat/Grass Texture Background - FIXED URL */
+.agriculture-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Subtle vertical lines on the right - xmlns FIXED to correct SVG namespace */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M 10 0 L 10 100 M 30 0 L 30 100 M 50 0 L 50 100 M 70 0 L 70 100 M 90 0 L 90 100' stroke='rgba(255,255,255,0.05)' stroke-width='1'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 150px 100%; 
+    background-position: calc(50% + 200px) 0; 
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* --- Header Section (Alignment Adjustments) --- */
+
+.header-row { 
+    display: flex; 
+    margin-bottom: 50px; 
+    /* Alignment: Ensure content starts from the top */
+    align-items: flex-start; 
+}
+
+/* Increased padding for separation and cleaner column margins */
+.header-row .col-left { flex-basis: 50%; padding-right: 30px; } 
+.header-row .col-right { flex-basis: 50%; padding-left: 30px; } 
+
+.agriculture-section .btn-get-to-know-us {
+  display: inline-block; 
+  background-color: #fff;
+  color: #4CAF50; 
+  border-radius: 25px; 
+  padding: 5px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+}
+
+.agriculture-section .section-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+
+.agriculture-section .section-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  padding-top: 20px; 
+}
+
+
+/* --- Content Row (Image and Steps Layout) --- */
+
+.content-row { display: flex; z-index: 1; position: relative; }
+.content-row .col-left { flex-basis: 50%; padding-right: 15px; position: relative; }
+.content-row .col-right { flex-basis: 50%; padding-left: 15px; }
+
+.agriculture-section .image-container {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 480px; 
+  background-image: url('../src/assets/1da4a8461f43255e5cd02a6b142104ebba1a681f.jpg'); 
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.agriculture-section .chat-icon-overlay {
+  position: absolute; bottom: -20px; right: -5px; 
+  background-color: #FFC107; border-radius: 50%;
+  width: 70px; height: 70px; display: flex; justify-content: center; align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); z-index: 10; 
+  border: 5px solid #4CAF50; 
+}
+
+
+/* --- Steps/Cards Styling (Alignment Adjustments) --- */
+
+.agriculture-section .steps-container { padding-left: 20px; margin-top: -10px; }
+.agriculture-section .step-card { margin-bottom: 25px; transition: transform 0.3s ease, background-color 0.3s ease; }
+
+
+/* Step Card Body: Defines the horizontal layout (Number | Text Columns) */
+.agriculture-section .step-card-body {
+    display: flex; 
+    /* NEW ALIGNMENT: Vertically center text block with the number */
+    align-items: center; 
+}
+
+/* Vertical padding adjusted for consistent visual rhythm */
+.agriculture-section .step-card-body {
+    padding: 1rem 0; 
+}
+
+/* ACTIVE Step Card (Solid White) */
+.agriculture-section .step-card-active {
+  background-color: #fff; 
+  color: #000; 
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-right: -20px; 
+}
+
+.agriculture-section .step-card-active .step-card-body {
+    /* Slightly adjusted vertical padding for the active card for balance */
+    padding: 1.2rem 1.8rem;
+}
+
+
+/* Step Number Styling */
+.agriculture-section .step-card .step-number-wrapper {
+  /* Increased min-width to push the text further away from the number */
+  min-width: 50px; 
+  padding-right: 20px; 
+  /* Ensure the number wrapper doesn't force alignment down */
+  align-self: flex-start;
+}
+
+.agriculture-section .step-card .step-number {
+  font-size: 1.8rem; 
+  font-weight: 700;
+  line-height: 1; 
+  color: rgba(255, 255, 255, 0.5); 
+}
+
+.agriculture-section .step-card-active .step-number {
+    color: #4CAF50; 
+}
+
+/* Text Content: Splits Title and Description */
+.agriculture-section .step-text-content {
+    display: flex; 
+    flex-grow: 1;
+}
+
+.agriculture-section .step-title-col { flex-basis: 50%; margin-right: 15px; }
+.agriculture-section .step-description-col { flex-basis: 50%; }
+
+.agriculture-section .step-card .step-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0; color: #fff; }
+.agriculture-section .step-card-active .step-title { color: #000; }
+
+.agriculture-section .step-card .step-description { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0; color: rgba(255, 255, 255, 0.7); }
+.agriculture-section .step-card-active .step-description { color: #000; opacity: 0.7; }
+
+/* --- Responsive Adjustments (Mobile - Retained) --- */
+@media (max-width: 991px) {
+    .header-row, .content-row { display: block; }
+    .header-row .col-left, .header-row .col-right,
+    .content-row .col-left, .content-row .col-right { flex-basis: 100%; padding-left: 0; padding-right: 0; }
+    .agriculture-section .image-container { height: 300px; margin-bottom: 50px; }
+    .agriculture-section .steps-container { padding-left: 0; }
+    .agriculture-section .step-text-content { display: block; }
+    .agriculture-section .step-title-col { flex-basis: 100%; margin-right: 0; margin-bottom: 5px; }
+    .agriculture-section .step-card-active { margin-right: 0; }
+}

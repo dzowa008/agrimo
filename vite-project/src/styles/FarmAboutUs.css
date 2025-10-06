@@ -1,0 +1,176 @@
+/* General Section Styling */
+.farm-about-us-section {
+  background-color: #f8f6f2; 
+  font-family: 'Arial', sans-serif;
+  padding: 80px 0; /* Add top/bottom padding for section spacing */
+}
+
+/* Main Two-Column Layout (Flexbox) */
+.farm-about-us-container {
+  max-width: 1200px; /* Max width to mimic the image's container */
+  margin: 0 auto;
+  display: flex; /* Makes the immediate children (columns) flexible */
+  align-items: center; /* Vertically centers the content against the image */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Left Column (Image) */
+.image-column {
+  flex: 1 1 50%; /* Takes 50% width on large screens */
+  min-width: 300px; /* Minimum width before wrapping */
+  /* Ensure the image container has controlled aspect ratio/height */
+  height: 600px; 
+}
+
+.farm-hero-image {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  display: block;
+}
+
+/* Right Column (Content) */
+.content-column {
+  flex: 1 1 50%; /* Takes 50% width on large screens */
+  min-width: 300px; /* Minimum width before wrapping */
+  display: flex; /* Use flex to align content block internally */
+  justify-content: center;
+  align-items: center;
+  padding: 40px; /* Inner padding */
+}
+
+.about-us-content {
+  max-width: 550px; /* Constrain text block width */
+  padding: 20px;
+}
+
+/* "About Us" Tag (Inline-Flex for icon alignment) */
+.about-us-tag {
+  background-color: #e5ead7; 
+  color: #5d8e48; 
+  padding: 6px 15px;
+  border-radius: 20px;
+  display: inline-flex; 
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tag-icon {
+  width: 8px;
+  height: 8px;
+  background-color: #5d8e48; 
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Section Title & Description */
+.section-title {
+  font-size: 2.5em; 
+  font-weight: 700;
+  color: #3a3f31; 
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #6a6a6a;
+  margin-bottom: 40px;
+}
+
+/* Features Grid (Flexbox for two lists side-by-side) */
+.features-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  margin-bottom: 40px;
+}
+
+.feature-list {
+  flex: 1 1 50%; /* Each list takes 50% of the grid width */
+  padding-right: 15px;
+}
+
+/* Individual Feature Items (CRITICAL Flexbox for checkmark alignment) */
+.feature-item {
+  margin-bottom: 12px;
+  color: #6a6a6a;
+  display: flex; 
+  align-items: flex-start; /* Aligns content to the top */
+  font-size: 1em;
+}
+
+.check-icon {
+  color: #e8d05e; /* Pale yellow/gold color */
+  font-size: 1.1em;
+  min-width: 25px; /* Reserves space for the icon */
+  margin-right: 5px;
+}
+
+/* "Know More" Button (Inline-Flex for icon alignment) */
+.know-more-btn-wrapper {
+  margin-top: 20px;
+}
+
+.know-more-btn {
+  background-color: #5d8e48; 
+  border: 1px solid #5d8e48;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 45px;
+  font-weight: 600;
+  text-decoration: none; 
+  display: inline-flex; 
+  align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.know-more-btn:hover {
+  background-color: #4a743b; 
+  border-color: #4a743b;
+  color: #fff; 
+}
+
+.know-more-btn i {
+  margin-left: 8px;
+  font-size: 1.1em;
+}
+
+/* Responsive Adjustments (Mobile/Tablet) */
+@media (max-width: 992px) {
+  .farm-about-us-container {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .image-column,
+  .content-column {
+    flex: 0 0 100%; /* Take full width */
+  }
+  
+  .image-column {
+    height: 400px; /* Adjust height for mobile view */
+  }
+
+  .content-column {
+    padding: 20px;
+  }
+  
+  .about-us-content {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .features-grid {
+    flex-direction: column; /* Stack the two feature lists */
+  }
+  
+  .feature-list {
+    flex: 0 0 100%; 
+    padding-right: 0;
+    margin-bottom: 20px; /* Add space between stacked lists */
+  }
+}
